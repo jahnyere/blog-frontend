@@ -1,21 +1,22 @@
-import { useState } from 'react'
+import {Routes, Route} from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import Home from './components/Home'
+import Post from './components/Post'
 
 
 function App() {
 
   return (
-    <>
+
       <div className="min-h-screen bg-gray-100">
        <Navbar />
-       <Hero />
+       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts/:slug" element={<Post />} />
+      </Routes>
 
-        <main className="max-w-7xl mx-auto px-6 py-8">
-          <h2 className="text-3xl font-bold text-gray-900">Latest Post</h2>
-        </main>
     </div>
-    </>
+
   )
 }
 
